@@ -79,7 +79,7 @@ int main(){
         printf("Matriz C:\n");
         for(int linhaC = 0; linhaC < 4; linhaC++){
                for(int colunaC = 0; colunaC < 4; colunaC++){
-               printf("%d\t", matrizC[linhaC][colunaC]);
+               printf("%4d", matrizC[linhaC][colunaC]);
                }
         printf("\n");
         }
