@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(){
+    
+    char time1[31];
+    char jogador1[31]; 
+    char posicao1 = {G, L, Z, V, M, A};
+    int forca1;
+    int Forca_Time1
+
+    fgets(time1, 31, stdin);
+    fputs(time1, stdout);
+    
+    for(int i = 0; i < 11; i++){
+       scanf("%30[^;]; %c; %d", jogador, &posicao, &forca);
+       fflush(stdin);
+       printf("%s; %c; %d\n", jogador, posicao, forca);
+       
+       switch(posicao){
+        case 'G'= Forca_Time1 =+ 8 * forca;
+       }
+
+    }
+     
+    
+
+    return 0;
+}
