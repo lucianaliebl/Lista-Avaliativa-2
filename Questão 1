@@ -1,119 +1,42 @@
 #include <stdio.h>
 
-int main(){
-    
-    int vetor[10], vetorResultado9[9], vetorResultado8[8], vetorResultado7[7], vetorResultado6[6], vetorResultado5[5], vetorResultado4[4], vetorResultado3[3], vetorResultado2[2], vetorResultado1[1];
-
-    for(int i = 0; i < 10; i++){
-        scanf("%d", &vetor[i]);
-    }
-
-    for(int i = 0; i < 10; i++){
-        printf("%d ", vetor[i]);
-    }
-
-    printf("\n");
-        
-    for(int i = 0; i < 9; i++){
-        vetorResultado9[i] = vetor[i] + vetor[i+1];
-        printf("%d ", vetorResultado9[i]);
-    }
-        
-    printf("\n");
-
-    for(int i = 0; i < 8; i++){
-        vetorResultado8[i] = vetorResultado9[i] + vetorResultado9[i+1];
-        printf("%d ", vetorResultado8[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 7; i++){
-        vetorResultado7[i] = vetorResultado8[i] + vetorResultado8[i+1];
-        printf("%d ", vetorResultado7[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 6; i++){
-        vetorResultado6[i] = vetorResultado7[i] + vetorResultado7[i+1];
-        printf("%d ", vetorResultado6[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 5; i++){
-        vetorResultado5[i] = vetorResultado6[i] + vetorResultado6[i+1];
-        printf("%d ", vetorResultado5[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 4; i++){
-        vetorResultado4[i] = vetorResultado5[i] + vetorResultado5[i+1];
-        printf("%d ", vetorResultado4[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 3; i++){
-        vetorResultado3[i] = vetorResultado4[i] + vetorResultado4[i+1];
-        printf("%d ", vetorResultado3[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 2; i++){
-        vetorResultado2[i] = vetorResultado3[i] + vetorResultado3[i+1];
-        printf("%d ", vetorResultado2[i]);
-    }
-
-    printf("\n");
-
-    for(int i = 0; i < 1; i++){
-        vetorResultado1[i] = vetorResultado2[i] + vetorResultado2[i+1];
-        printf("%d ", vetorResultado1[i]);
-    }
-
-    printf("\n");
-
-    return 0; 
-}
-
-#include <stdio.h>
-
-int main(){
-   
+int main() {
     int vetor[10];
-    int tamanho = 10; 
+    int tamanho = 10;
 
-    for(int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++) {
         scanf("%d", &vetor[i]);
     }
 
-    for(int i = 0; i < 10; i++){
-        printf("%d ", vetor[i]);
+    for (int i = 0; i < 10; i++) {
+        printf("%d", vetor[i]);
+        if (i < 9) {
+            printf(" ");
+        }
     }
 
     printf("\n");
 
-    while(tamanho > 1){
+    while (tamanho > 1) {
         int novoTamanho = tamanho - 1;
         int vetorResultado[novoTamanho];
-        
-        for(int i = 0; i < novoTamanho; i++){
-            vetorResultado[i] = vetor[i] + vetor[i+1];
-            
-            printf("%d ", vetorResultado[i]);
 
+        for (int i = 0; i < novoTamanho; i++) {
+            vetorResultado[i] = vetor[i] + vetor[i + 1];
             vetor[i] = vetorResultado[i];
+        }
+
+        for (int i = 0; i < novoTamanho; i++) {
+            printf("%d", vetorResultado[i]);
+            if (i < novoTamanho - 1) {
+                printf(" ");
+            }
         }
 
         printf("\n");
 
-        tamanho = novoTamanho; 
-
+        tamanho = novoTamanho;
     }
-        
-   return 0;
+
+    return 0;
 }
