@@ -1,31 +1,4 @@
-#include <stdio.h>
 
-int main(){
-    
-    char time1[31];
-    char jogador1[31]; 
-    char posicao1 = {G, L, Z, V, M, A};
-    int forca1;
-    int Forca_Time1
-
-    fgets(time1, 31, stdin);
-    fputs(time1, stdout);
-    
-    for(int i = 0; i < 11; i++){
-       scanf("%30[^;]; %c; %d", jogador, &posicao, &forca);
-       fflush(stdin);
-       printf("%s; %c; %d\n", jogador, posicao, forca);
-       
-       switch(posicao){
-        case 'G'= Forca_Time1 =+ 8 * forca;
-       }
-
-    }
-     
-    
-
-    return 0;
-}
 #include <stdio.h>
 #include <string.h>
 
@@ -111,5 +84,74 @@ int main(){
         printf("%s eh mais forte\n", time2);
     }
 
+    return 0;
+}
+
+#include <stdio.h>
+
+
+int main(){
+    char time1[31], time2[31];
+    char jogador1[31], jogador2[31];
+    char posicao1, posicao2;
+    int forca1, forca2;
+    float Forca_Time1 = 0;
+    float Forca_Time2 = 0;
+
+    fgets(time1, 31, stdin);
+
+    for(int i = 0; i < 11; i++){
+        scanf("%30[^;]; %c; %d", jogador1, &posicao1, &forca1);
+        getchar();
+        fflush(stdin);
+
+        if(posicao1 == 'G'){
+            Forca_Time1 += 8 * forca1; 
+        }else if(posicao1 == 'L'){
+            Forca_Time1 += 10 * forca1;
+        }else if(posicao1 == 'Z'){
+            Forca_Time1 += 5 * forca1;
+        }else if(posicao1 == 'V'){
+            Forca_Time1 += 8 * forca1;
+        }else if(posicao1 == 'M'){
+            Forca_Time1 += 11 * forca1;
+        }else if(posicao1 == 'A'){
+            Forca_Time1 += 12 * forca1;
+        }
+    }
+
+    fgets(time2, 31, stdin);
+
+    for(int i = 0; i < 11; i++){
+        scanf("%30[^;]; %c; %d", jogador2, &posicao2, &forca2);
+        getchar();
+        fflush(stdin);
+
+        if(posicao2 == 'G'){
+            Forca_Time2 += 8 * forca2; 
+        }else if(posicao2 == 'L'){
+            Forca_Time2 += 10 * forca2;
+        }else if(posicao2 == 'Z'){
+            Forca_Time2 += 5 * forca2;
+        }else if(posicao2 == 'V'){
+            Forca_Time2 += 8 * forca2;
+        }else if(posicao2 == 'M'){
+            Forca_Time2 += 11 * forca2;
+        }else if(posicao2 == 'A'){
+            Forca_Time2 += 12 * forca2;
+        }
+    }
+   
+    Forca_Time1 /= 100;
+    Forca_Time2 /= 100; 
+
+    printf("%s: %.2f de forca\n", time1, Forca_Time1);
+    printf("%s: %.2f de forca\n", time2, Forca_Time2); 
+
+    if(Forca_Time1 > Forca_Time2){
+        printf("%s eh mais forte\n", time1, time2);
+    } else {
+        printf("%s eh mais forte\n", time2, time1);
+    }
     return 0;
 }
