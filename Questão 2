@@ -9,13 +9,12 @@ int main(){
     double Forca_Time1 = 0;
     double Forca_Time2 = 0;
 
-    fgets(time1, 31, stdin);
+    scanf("%30[^\n]%*c", time1);
 
     for(int i = 0; i < 11; i++){
-        scanf("%30[^;]; %c; %d", jogador1, &posicao1, &forca1);
+        scanf("%30[^;]; %c; %d*c", jogador1, &posicao1, &forca1);
         getchar();
-        fflush(stdin);
-
+        
         if(posicao1 == 'G'){
             Forca_Time1 += 8 * forca1; 
         }else if(posicao1 == 'L'){
@@ -30,14 +29,12 @@ int main(){
             Forca_Time1 += 12 * forca1;
         }
     }
-
-    fgets(time2, 31, stdin);
+   scanf("%30[^\n]%*c", time2);
 
     for(int i = 0; i < 11; i++){
-        scanf("%30[^;]; %c; %d", jogador2, &posicao2, &forca2);
+        scanf("%30[^;]; %c; %d*c", jogador2, &posicao2, &forca2);
         getchar();
-        fflush(stdin);
-
+        
         if(posicao2 == 'G'){
             Forca_Time2 += 8 * forca2; 
         }else if(posicao2 == 'L'){
@@ -55,18 +52,14 @@ int main(){
    
     Forca_Time1 /= 100;
     Forca_Time2 /= 100; 
-
-    printf("%s:%.2lf de forca\n", time1, Forca_Time1);
-    fflush(stdout);
-    printf("%s:%.2lf de forca\n", time2, Forca_Time2); 
-    fflush(stdout);
+    
+    printf("%s: %.2lf de forca\n", time1, Forca_Time1);
+    printf("%s: %.2lf de forca\n", time2, Forca_Time2); 
 
     if(Forca_Time1 > Forca_Time2){
-        printf("%s eh mais forte\n", time1);
-        fflush(stdout);
+        printf("%s eh mais forte\n", time1);    
     } else {
-        printf("%s eh mais forte\n", time2);
-        fflush(stdout);
+        printf("%s eh mais forte\n", time2);  
     }
     return 0;
 }
